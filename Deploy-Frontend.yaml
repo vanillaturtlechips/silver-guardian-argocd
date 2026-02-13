@@ -15,7 +15,6 @@ spec:
       labels:
         app: frontend
     spec:
-      # Pod를 균등하게 배치 (Anti-Affinity)
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -30,7 +29,7 @@ spec:
               topologyKey: kubernetes.io/hostname
       containers:
       - name: frontend
-        image: <YOUR_ECR_REPOSITORY_URL>:<TAG>  # ECR 이미지 주소 입력
+        image:   # ECR 이미지 여기에 넣어주세용
         ports:
         - containerPort: 80
         resources:
