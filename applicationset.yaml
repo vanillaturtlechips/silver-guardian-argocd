@@ -18,7 +18,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: "https://github.com/vanillaturtlechips/silver-guardian.git
+        repoURL: "https://github.com/vanillaturtlechips/silver-guardian.git"
         targetRevision: main
         path: '{{path}}'
       destination:
