@@ -42,13 +42,13 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/silver-guardian-frontend:${{ github.sha }}
-            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/silver-guardian-frontend:latest
+            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/silver-guardian-mvp:${{ github.sha }}
+            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/silver-guardian-mvp:latest
 
       # 배포용 YAML 파일의 이미지 태그 업데이트
       - name: Update Deployment YAML
         run: |
-          sed -i "s|image:.*|image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/silver-guardian-frontend:${{ github.sha }}|g" apps/frontend/deployment.yaml
+          sed -i "s|image:.*|image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/silver-guardian-mvp:${{ github.sha }}|g" apps/frontend/deployment.yaml
 
       # 변경된 YAML 파일을 리포지토리에 다시 푸시
       - name: Commit and Push Changes
