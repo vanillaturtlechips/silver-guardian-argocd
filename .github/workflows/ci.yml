@@ -44,7 +44,8 @@ jobs:
           tags: |
             ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/silver-guardian-mvp:${{ github.sha }}
             ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/silver-guardian-mvp:latest
-
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
       # 배포용 YAML 파일의 이미지 태그 업데이트
       - name: Update Deployment YAML
         run: |
