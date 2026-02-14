@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: silver-guardian-backend-config
-  namespace: backend
+  namespace: silver-guardian
 data:
   DB_HOST: "silver-guardian-db.silver-guardian.svc.cluster.local"
   DB_PORT: "5432"
