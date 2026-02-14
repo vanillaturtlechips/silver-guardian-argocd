@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: silver-guardian-backend
-  namespace: backend
+  namespace: silver-guardian
   labels:
     app: backend
 spec:
