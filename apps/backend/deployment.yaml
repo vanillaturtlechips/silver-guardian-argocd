@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: backend
-        image: 009946608368.dkr.ecr.ap-northeast-2.amazonaws.com/silver-guardian-backend:ce7f24f95295e72c18b106a31177fb03de242a40
+        image: 009946608368.dkr.ecr.ap-northeast-2.amazonaws.com/silver-guardian-backend:ba7afa012f3141a9f356692ca4f217ef29d3b06b
