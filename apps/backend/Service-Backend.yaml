@@ -10,6 +10,6 @@ spec:
     app: backend
   ports:
     - protocol: TCP
-      port: 50051      # 서비스가 노출할 포트
+      port: 50051      
       targetPort: 50051 # 컨테이너 내부 gRPC 포트
   type: ClusterIP
