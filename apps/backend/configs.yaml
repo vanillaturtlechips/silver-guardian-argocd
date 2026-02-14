@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: silver-guardian-backend-config
+  namespace: backend
+data:
+  # DB 및 Redis 접속 정보 (내부 서비스 주소 권장)
+  DB_HOST: "silver-guardian-db.silver-guardian.svc.cluster.local"
+  DB_PORT: "5432"
+  DB_NAME: "silver_guardian"
+  DB_USER: "dev"
+  REDIS_HOST: "silver-guardian-redis.silver-guardian.svc.cluster.local"
+  REDIS_PORT: "6379"
+  GEMINI_MODEL: "gemini-2.0-flash"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: silver-guardian-backend-secrets
+  namespace: backend
+type: Opaque
+data:
+  # 아래 값들은 예시이며, 실제 값을 'echo -n "값" | base64'로 변환하여 넣으세요.
+  DB_PASSWORD: "ZGV2cGFzczEyMw==" 
+  GEMINI_API_KEY: "SFlfQUlX..."    
+  YOUTUBE_API_KEY: "QUl6YVN5..."   
