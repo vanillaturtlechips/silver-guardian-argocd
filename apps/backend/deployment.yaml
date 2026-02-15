@@ -24,7 +24,7 @@ spec:
               app: backend
       containers:
       - name: backend
-        image: 009946608368.dkr.ecr.ap-northeast-2.amazonaws.com/silver-guardian-backend:05bd053c90001cfd538c2f64667255dc96c8a8e7
+        image: 009946608368.dkr.ecr.ap-northeast-2.amazonaws.com/silver-guardian-backend:b0a2081726f0d98c21a3bd23a44bfb36421fb04e
         ports:
         - containerPort: 50051
         startupProbe:
