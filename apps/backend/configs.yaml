@@ -4,7 +4,7 @@ metadata:
   name: silver-guardian-backend-config
   namespace: silver-guardian
 data:
-  DB_HOST: "silver-guardian-db.silver-guardian.svc.cluster.local"
+  DB_HOST: "silver-guardian-db.c9osquca0esm.ap-northeast-2.rds.amazonaws.com"
   DB_PORT: "5432"
   DB_NAME: "silver_guardian"
   DB_USER: "dev"
