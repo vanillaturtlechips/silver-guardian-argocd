@@ -29,7 +29,7 @@ spec:
               topologyKey: kubernetes.io/hostname
       containers:
       - name: frontend
-        image: 009946608368.dkr.ecr.ap-northeast-2.amazonaws.com/silver-guardian-mvp:05bd053c90001cfd538c2f64667255dc96c8a8e7
+        image: 009946608368.dkr.ecr.ap-northeast-2.amazonaws.com/silver-guardian-mvp:a77cfd63cb8b955a7aff959556d299c07e549115
         ports:
         - containerPort: 80
         resources:
