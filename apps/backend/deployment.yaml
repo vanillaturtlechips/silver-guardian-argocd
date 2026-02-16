@@ -23,25 +23,30 @@ spec:
               app: backend
       containers:
       - name: backend
-        image: 009946608368.dkr.ecr.ap-northeast-2.amazonaws.com/silver-guardian-backend:291cbc7110662f5d14919602377ce709f1902d75
+        image: 009946608368.dkr.ecr.ap-northeast-2.amazonaws.com/silver-guardian-backend:v2
         imagePullPolicy: Always
         ports:
-        - containerPort: 50051
-        - containerPort: 8080
+        - name: grpc-native
+          containerPort: 50051
+        - name: grpc-web
+          containerPort: 8080
         envFrom: 
         - secretRef:
             name: silver-guardian-backend-secrets
+        
         startupProbe:
           tcpSocket:
             port: 50051
           initialDelaySeconds: 10
           periodSeconds: 5
           failureThreshold: 15
+        
         readinessProbe:
           tcpSocket:
             port: 50051
           initialDelaySeconds: 10
           periodSeconds: 10
+        
         livenessProbe:
           tcpSocket:
             port: 50051
