@@ -6,7 +6,7 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: "https://github.com/vanillaturtlechips/silver-guardian.git"
+        repoURL: "https://github.com/vanillaturtlechips/silver-guardian-argocd.git"
         revision: main
         directories:
           - path: "apps/*"
@@ -18,12 +18,12 @@ spec:
     spec:
       project: default
       source:
-        repoURL: "https://github.com/vanillaturtlechips/silver-guardian.git"
+        repoURL: "https://github.com/vanillaturtlechips/silver-guardian-argocd.git"
         targetRevision: main
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basename}}'
+        namespace: silver-guardian
       syncPolicy:
         automated:
           prune: true
@@ -31,9 +31,3 @@ spec:
         syncOptions:
           - CreateNamespace=true
           - Validate=false
-        retry:
-          limit: 5
-          backoff:
-            duration: 5s
-            factor: 2
-            maxDuration: 3m
