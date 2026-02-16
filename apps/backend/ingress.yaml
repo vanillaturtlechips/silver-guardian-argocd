@@ -4,10 +4,11 @@ metadata:
   name: backend-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "https://silver-guardian.site, http://silver-guardian.site"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://silver-guardian.site"
     nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "keep-alive,user-agent,cache-control,content-type,content-transfer-encoding,x-accept-content-transfer-encoding,x-accept-response-streaming,x-user-agent,x-grpc-web,grpc-timeout"
 spec:
   rules:
     - host: api.silver-guardian.site
