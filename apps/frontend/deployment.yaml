@@ -1,8 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
-  namespace: frontend
+  name: silver-guardian-frontend
   labels:
     app: frontend
 spec:
@@ -29,7 +28,8 @@ spec:
               topologyKey: kubernetes.io/hostname
       containers:
       - name: frontend
-        image: 009946608368.dkr.ecr.ap-northeast-2.amazonaws.com/silver-guardian-mvp:fde177e71da3c6f28d1b450f9c6f4eac01e6e0dc
+        image: 009946608368.dkr.ecr.ap-northeast-2.amazonaws.com/silver-guardian-frontend:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         resources:

@@ -2,14 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   name: silver-guardian-backend
-  namespace: silver-guardian
   labels:
     app: backend
 spec:
+  type: ClusterIP
   selector:
     app: backend
   ports:
     - protocol: TCP
-      port: 50051      
-      targetPort: 50051 # 컨테이너 내부 gRPC 포트
-  type: ClusterIP
+      port: 50051
+      targetPort: 50051

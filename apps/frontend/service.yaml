@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend
+  name: silver-guardian-frontend
   namespace: frontend
   labels:
     app: frontend
 spec:
-  type: LoadBalancer  # NLB 자동 생성
+  type: ClusterIP
   selector:
     app: frontend
   ports:
