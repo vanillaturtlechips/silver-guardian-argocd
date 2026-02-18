@@ -23,7 +23,7 @@ spec:
               app: backend
       containers:
       - name: backend
-        image: 009946608368.dkr.ecr.ap-northeast-2.amazonaws.com/silver-guardian-backend:latest
+        image: 009946608368.dkr.ecr.ap-northeast-2.amazonaws.com/silver-guardian-backend:c3b03aca3eb2bba8a6759f6fcab6ab343f2b883a
         imagePullPolicy: Always
         ports:
         - name: grpc-native
